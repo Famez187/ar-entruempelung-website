@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: DOMAIN.de durch die echte Domain ersetzen
+Sitemap: https://DOMAIN.de/sitemap.xml

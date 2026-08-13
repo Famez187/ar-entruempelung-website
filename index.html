@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Entrümpelung & Haushaltsauflösung Main-Taunus | AR Entrümpelung</title>
+<meta name="description" content="Entrümpelung, Haushaltsauflösung & Räumung im Main-Taunus- & Hochtaunus-Kreis. Kostenlose Besichtigung, Festpreis, besenrein. ☎ 0173 392 6466">
+<meta name="robots" content="index, follow">
+<!-- TODO vor Go-Live: Sobald eine echte Domain existiert, hier ergänzen:
+     <link rel="canonical" href="https://IHRE-DOMAIN.de/">
+     <meta property="og:url" content="https://IHRE-DOMAIN.de/">
+     und og:image sowie JSON-LD image/logo auf absolute https://-URLs umstellen. -->
+<meta property="og:title" content="AR Entrümpelung – Entrümpelung & Haushaltsauflösung">
+<meta property="og:description" content="Professionelle Entrümpelungen, Haushaltsauflösungen und Räumungen im Main-Taunus- und Hochtaunus-Kreis. Kostenlose Besichtigung & Festpreisgarantie.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/cover.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="AR Entrümpelung">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preload" as="image" href="assets/nachher-flaeche-1.webp" fetchpriority="high">
+
+<!-- Inter Font -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-var.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/inter-var.woff2') format('woff2')}</style>
+<!-- FontAwesome (nicht render-blockierend) -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: { brand: {50:'#EFF5FB',100:'#DCE9F5',600:'#2563EB',700:'#1D4ED8',800:'#1E40AF',900:'#1E3A8A'} }
+      }
+    }
+  }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AR Entrümpelung",
+  "image": "assets/cover.jpg",
+  "logo": "assets/logo.jpg",
+  "description": "Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebs- & Lagerräumungen im Main-Taunus- und Hochtaunus-Kreis.",
+  "telephone": "+491733926466",
+  "email": "ardienstleistung300@gmail.com",
+  "priceRange": "€€",
+  "areaServed": [
+    {"@type": "City", "name": "Hofheim am Taunus"},
+    {"@type": "City", "name": "Kelkheim"},
+    {"@type": "City", "name": "Bad Soden am Taunus"},
+    {"@type": "City", "name": "Eschborn"},
+    {"@type": "City", "name": "Hattersheim"},
+    {"@type": "City", "name": "Bad Homburg"},
+    {"@type": "City", "name": "Oberursel"},
+    {"@type": "City", "name": "Frankfurt am Main"},
+    {"@type": "City", "name": "Wiesbaden"}
+  ],
+  "sameAs": ["https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet eine Entrümpelung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Der Preis hängt von der Menge des Räumguts, der Größe des Objekts, der Zugänglichkeit (Etage, Aufzug, Trageweg) und der Art der Entsorgung ab. Deshalb kommen wir zur kostenlosen, unverbindlichen Besichtigung – danach erhalten Sie einen verbindlichen Festpreis ohne versteckte Kosten."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell bekomme ich einen Termin und wie lange dauert die Räumung?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Wir melden uns in der Regel innerhalb von 24 Stunden, kurzfristige Termine sind möglich. Die Dauer hängt von Größe und Menge ab – viele Objekte sind innerhalb von ein bis zwei Tagen geräumt; den genauen Zeitrahmen nennen wir Ihnen nach der Besichtigung."}
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich bei der Entrümpelung anwesend sein?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nein, nicht zwingend. Nach der Besichtigung und Schlüsselübergabe erledigen wir alles selbstständig und übergeben das Objekt anschließend besenrein."}
+    },
+    {
+      "@type": "Question",
+      "name": "Werden Wertgegenstände auf den Preis angerechnet?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Bei der Besichtigung sichten wir vorhandene Wertgegenstände. Ob und in welcher Höhe eine Anrechnung möglich ist, besprechen wir transparent vor Ort – das Ergebnis fließt in Ihr Festpreis-Angebot ein."}
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert mit den Sachen?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Wir trennen fachgerecht, entsorgen umweltgerecht und führen Gegenstände der Verwertung zu, wo das möglich ist."}
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Sie versichert?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja, unser Team ist für Schäden vor Ort versichert – Ihr Eigentum und das Gebäude sind abgesichert."}
+    },
+    {
+      "@type": "Question",
+      "name": "Übernehmen Sie auch Messi-Wohnungen und Nachlässe?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gerade bei Nachlässen und Messi-Wohnungen arbeiten wir diskret, respektvoll und ohne Aufsehen in der Nachbarschaft."}
+    }
+  ]
+}
+</script>
+<style>
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .js .reveal.visible{opacity:1;transform:none}
+  .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+  .toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;transition:.3s;z-index:100}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media (max-width:639px){.toast{bottom:84px}}
+  html{scroll-padding-top:110px}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    .toast{transition:none}
+    #mobileMenu{transition:none}
+  }
+  ::placeholder{color:#64748b;opacity:1}
+</style>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased">
+<script>document.documentElement.classList.add('js')</script>
+<a href="#inhalt" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-brand-700 focus:font-semibold">Zum Inhalt springen</a>
+
+<!-- Topbar -->
+<div class="bg-slate-800 text-slate-300 text-sm">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-10 flex items-center justify-between gap-4">
+    <span class="inline-flex items-center gap-2 truncate"><i aria-hidden="true" class="fa-solid fa-circle-check text-blue-400"></i> Kostenlose Besichtigung &amp; faires Festpreis-Angebot</span>
+    <a href="mailto:ardienstleistung300@gmail.com" class="hidden md:inline-flex items-center gap-2 hover:text-white transition"><i aria-hidden="true" class="fa-solid fa-envelope text-blue-400"></i> ardienstleistung300@gmail.com</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-white border-b border-slate-200 transition-shadow">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center justify-between h-[76px]">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/logo.jpg" width="675" height="675" alt="AR Entrümpelung Logo" class="w-12 h-12 rounded-full object-cover border border-slate-200">
+        <span class="leading-tight">
+          <span class="block text-lg font-bold tracking-tight text-slate-900">AR Entrümpelung</span>
+          <span class="block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500">Entrümpelung · Räumung · Auflösung</span>
+        </span>
+      </a>
+      <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-8 font-medium text-slate-600">
+        <a href="#leistungen" class="whitespace-nowrap hover:text-brand-700 transition">Leistungen</a>
+        <a href="#referenzen" class="whitespace-nowrap hover:text-brand-700 transition">Referenzen</a>
+        <a href="#bewertungen" class="whitespace-nowrap hover:text-brand-700 transition">Bewertungen</a>
+        <a href="#warum" class="whitespace-nowrap hover:text-brand-700 transition">Über uns</a>
+        <a href="#ablauf" class="whitespace-nowrap hover:text-brand-700 transition">Ablauf</a>
+        <a href="#faq" class="whitespace-nowrap hover:text-brand-700 transition">FAQ</a>
+        <a href="#kontakt" class="whitespace-nowrap hover:text-brand-700 transition">Kontakt</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="tel:+491733926466" class="hidden lg:inline-flex whitespace-nowrap items-center gap-2 font-semibold text-slate-800 hover:text-brand-700 transition">
+          <span class="w-9 h-9 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center"><i aria-hidden="true" class="fa-solid fa-phone text-sm"></i></span>
+          0173 392 6466
+        </a>
+        <a href="#kontakt" class="hidden sm:inline-flex whitespace-nowrap items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-5 py-2.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+          Jetzt anfragen
+        </a>
+        <a href="tel:+491733926466" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-700" aria-label="Anrufen">
+          <i aria-hidden="true" class="fa-solid fa-phone text-xl"></i>
+        </a>
+        <button id="burger" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg text-slate-800 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-700" aria-label="Menü">
+          <i aria-hidden="true" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile Menü -->
+  <div id="mobileMenu" inert class="lg:hidden bg-white overflow-hidden max-h-0 transition-[max-height] duration-300">
+    <nav aria-label="Mobile Navigation" class="px-6 py-3 flex flex-col font-medium text-slate-700 border-t border-slate-200">
+      <a href="#leistungen" class="py-3 border-b border-slate-100">Leistungen</a>
+      <a href="#referenzen" class="py-3 border-b border-slate-100">Referenzen</a>
+      <a href="#bewertungen" class="py-3 border-b border-slate-100">Bewertungen</a>
+      <a href="#warum" class="py-3 border-b border-slate-100">Über uns</a>
+      <a href="#ablauf" class="py-3 border-b border-slate-100">Ablauf</a>
+      <a href="#faq" class="py-3 border-b border-slate-100">FAQ</a>
+      <a href="#kontakt" class="py-3 border-b border-slate-100">Kontakt</a>
+      <a href="tel:+491733926466" class="py-3 text-brand-700 font-bold"><i aria-hidden="true" class="fa-solid fa-phone mr-2"></i>0173 392 6466</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<!-- Hero -->
+<section id="top" class="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 border border-slate-200 bg-white text-slate-600 text-sm font-medium rounded-full px-4 py-1.5 mb-6">
+        <i aria-hidden="true" class="fa-solid fa-location-dot text-brand-700"></i> Main-Taunus- &amp; Hochtaunus-Kreis
+      </span>
+      <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-5">
+        Wir schaffen Platz.<br>Diskret, schnell und <span class="text-brand-700">besenrein</span>.
+      </h1>
+      <p class="text-lg text-slate-600 mb-8 max-w-xl">
+        Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebsräumungen in Hofheim, Kelkheim, Bad Homburg, Oberursel und der gesamten Region – mit kostenloser Besichtigung, verbindlichem Festpreis und einem Team, das sauber und pünktlich arbeitet.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a href="#kontakt" class="inline-flex items-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-7 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+          Kostenloses Angebot einholen <i aria-hidden="true" class="fa-solid fa-arrow-right text-sm"></i>
+        </a>
+        <a href="tel:+491733926466" class="inline-flex items-center gap-2.5 bg-white border border-slate-300 hover:border-brand-700 hover:text-brand-700 text-slate-800 font-semibold px-7 py-3.5 rounded-lg transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+          <i aria-hidden="true" class="fa-solid fa-phone text-sm"></i> 0173 392 6466
+        </a>
+      </div>
+      <ul class="space-y-2.5 text-[15px] font-medium text-slate-600">
+        <li class="flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700"></i> Rückmeldung in der Regel innerhalb von 24 Stunden</li>
+        <li class="flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700"></i> Foto per WhatsApp schicken – schnelle Ersteinschätzung</li>
+        <li class="flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700"></i> Versichertes, zuverlässiges Team</li>
+      </ul>
+    </div>
+    <div class="relative">
+      <img src="assets/nachher-flaeche-1.webp" fetchpriority="high" decoding="async" width="900" height="1200" alt="Besenrein geräumte Gewerbefläche nach Betriebsräumung im Main-Taunus-Kreis" class="w-full h-[420px] lg:h-[520px] object-cover rounded-xl border border-slate-200 shadow-md">
+      <figure class="absolute -left-4 lg:-left-8 bottom-8 w-40 lg:w-48 rounded-lg overflow-hidden border-4 border-white shadow-xl hidden sm:block">
+        <img src="assets/vorher-keller.webp" loading="lazy" width="901" height="1200" alt="Vollgestellter Keller vor der Entrümpelung" class="w-full h-32 lg:h-36 object-cover">
+        <figcaption class="bg-slate-800 text-white text-[11px] font-semibold tracking-wider text-center py-1.5">VORHER</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Vorteile -->
+<div class="border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <div class="flex items-center gap-3.5">
+      <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-magnifying-glass-location"></i></span>
+      <span class="font-semibold text-slate-800 text-[15px] leading-snug">Kostenlose Besichtigung</span>
+    </div>
+    <div class="flex items-center gap-3.5">
+      <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-shield-halved"></i></span>
+      <span class="font-semibold text-slate-800 text-[15px] leading-snug">Versichertes Team</span>
+    </div>
+    <div class="flex items-center gap-3.5">
+      <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-file-signature"></i></span>
+      <span class="font-semibold text-slate-800 text-[15px] leading-snug">Festpreisgarantie</span>
+    </div>
+    <div class="flex items-center gap-3.5">
+      <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-recycle"></i></span>
+      <span class="font-semibold text-slate-800 text-[15px] leading-snug">Umweltgerechte Entsorgung</span>
+    </div>
+    <div class="flex items-center gap-3.5">
+      <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-broom"></i></span>
+      <span class="font-semibold text-slate-800 text-[15px] leading-snug">Besenreine Übergabe</span>
+    </div>
+  </div>
+</div>
+
+<!-- Leistungen -->
+<section id="leistungen" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Unsere Leistungen</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Drei Kernleistungen. Ein Ansprechpartner.</h2>
+      <p class="text-lg text-slate-600">Ob privater Haushalt oder Gewerbe – wir räumen zuverlässig, diskret und zum vereinbarten Festpreis.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <article class="reveal bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+        <img src="assets/haushalt.webp" width="900" height="1200" alt="Haushaltsauflösung einer Wohnung im Hochtaunus-Kreis – vorher" class="h-48 w-full object-cover" loading="lazy">
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-house-circle-check text-brand-700"></i> Haushaltsauflösungen</h3>
+          <p class="text-slate-600 text-[15px] mb-5">Komplette Auflösung von Wohnungen und Häusern – inklusive Nachlass- und Messi-Wohnungen, sorgfältig und respektvoll.</p>
+          <ul class="space-y-2 text-sm font-medium text-slate-700 mb-6">
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Wohnung, Haus, Keller &amp; Dachboden</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Sichtung von Wertgegenständen</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Besenreine Übergabe</li>
+          </ul>
+          <a href="#kontakt" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-700 hover:gap-3 transition-all text-[15px]">Angebot anfordern <i aria-hidden="true" class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="reveal d1 bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+        <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach Betriebsräumung" class="h-48 w-full object-cover object-[center_30%]" loading="lazy">
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-warehouse text-brand-700"></i> Betriebs- &amp; Lagerräumungen</h3>
+          <p class="text-slate-600 text-[15px] mb-5">Büros, Lager und Geschäftsräume werden termingerecht geräumt – auf Wunsch außerhalb Ihrer Geschäftszeiten.</p>
+          <ul class="space-y-2 text-sm font-medium text-slate-700 mb-6">
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Büro-, Lager- &amp; Gewerbeflächen</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Demontage &amp; Rückbau von Einbauten</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Termingerechte Übergabe</li>
+          </ul>
+          <a href="#kontakt" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-700 hover:gap-3 transition-all text-[15px]">Angebot anfordern <i aria-hidden="true" class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="reveal d2 bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+        <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="h-48 w-full object-cover object-top" loading="lazy">
+        <div class="p-7 flex flex-col flex-1">
+          <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-truck-fast text-brand-700"></i> Entsorgung &amp; Sperrmüll</h3>
+          <p class="text-slate-600 text-[15px] mb-5">Abholung und umweltgerechte Entsorgung – fachgerecht getrennt und wo möglich der Verwertung zugeführt.</p>
+          <ul class="space-y-2 text-sm font-medium text-slate-700 mb-6">
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Sperrmüll &amp; Altmöbel</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Tapeten, Teppich &amp; Holzdecken</li>
+            <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-0.5"></i> Fachgerechte Trennung</li>
+          </ul>
+          <a href="#kontakt" class="mt-auto inline-flex items-center gap-2 font-semibold text-brand-700 hover:gap-3 transition-all text-[15px]">Angebot anfordern <i aria-hidden="true" class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+    </div>
+
+    <p class="mt-8 text-[15px] text-slate-500">
+      <span class="font-semibold text-slate-700">Außerdem:</span> Nachlassauflösungen · Messi-Wohnungen · Garagen &amp; Dachböden · Kleine Umzüge · Abbau von Küchen &amp; Schränken · Entfernung von Tapeten · Steinpflege &amp; Pflasterreinigung
+    </p>
+  </div>
+</section>
+
+<!-- Referenzen / Vorher-Nachher -->
+<section id="referenzen" class="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Referenzen</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Einblicke in unsere Arbeit</h2>
+      <p class="text-lg text-slate-600">Vom vollen Keller bis zur besenrein übergebenen Fläche.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/vorher-keller.webp" width="901" height="1200" alt="Vollgestellter Keller voller Kartons und Hausrat vor der Entrümpelung im Main-Taunus-Kreis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Keller voller Kartons &amp; Hausrat</figcaption>
+      </figure>
+      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/nachher-flaeche-1.webp" width="900" height="1200" alt="Vollständig geräumte, besenreine Gewerbefläche nach der Räumung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-brand-700 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">NACHHER</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Gewerbefläche – vollständig geräumt</figcaption>
+      </figure>
+      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/einsatz-gartenhaus.webp" width="900" height="1200" alt="Team von AR Entrümpelung bei der Räumung eines Gartenhauses" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-slate-600/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">IM EINSATZ</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Auch Gartenhäuser &amp; Außenbereiche</figcaption>
+      </figure>
+      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/vorher-buero.webp" width="900" height="1200" alt="Vollständig eingerichtetes Büro vor der Betriebsauflösung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Büro vor der Auflösung</figcaption>
+      </figure>
+      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach der Betriebsräumung im Hochtaunus-Kreis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-brand-700 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">NACHHER</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Besenrein zur Übergabe</figcaption>
+      </figure>
+      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+        <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Scheune vor der Räumung</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Google Bewertungen -->
+<!-- HINWEIS: Beispiel-Rezensionen als Platzhalter – durch echte Google-Rezensionen ersetzen, sobald das Google-Unternehmensprofil Bewertungen hat. -->
+<section id="bewertungen" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Bewertungen</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Das sagen unsere Kunden</h2>
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-1.5 shadow-sm">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+          <span class="font-bold text-slate-900">5,0</span>
+          <span class="text-amber-400 text-sm" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+        </span>
+        <span class="text-slate-500 text-sm">auf Google</span>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure class="reveal bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">MK</span>
+          <div>
+            <figcaption class="font-bold text-slate-900 leading-tight">M. Krüger</figcaption>
+            <span class="text-xs text-slate-500">vor 2 Monaten · Google</span>
+          </div>
+        </div>
+        <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+        <blockquote class="text-slate-600 text-[15px]">„Keller und Dachboden an einem Tag komplett geräumt – pünktlich, freundlich und zum vereinbarten Festpreis. Alles besenrein hinterlassen. Klare Empfehlung!“</blockquote>
+      </figure>
+      <figure class="reveal d1 bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">SB</span>
+          <div>
+            <figcaption class="font-bold text-slate-900 leading-tight">S. Becker</figcaption>
+            <span class="text-xs text-slate-500">vor 3 Monaten · Google</span>
+          </div>
+        </div>
+        <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+        <blockquote class="text-slate-600 text-[15px]">„Haushaltsauflösung nach einem Todesfall – das Team war diskret, einfühlsam und sehr sorgfältig. Die Besichtigung war kostenlos, das Angebot fair. Danke!“</blockquote>
+      </figure>
+      <figure class="reveal d2 bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">TW</span>
+          <div>
+            <figcaption class="font-bold text-slate-900 leading-tight">T. Weber</figcaption>
+            <span class="text-xs text-slate-500">vor 5 Monaten · Google</span>
+          </div>
+        </div>
+        <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+        <blockquote class="text-slate-600 text-[15px]">„Unsere Lagerfläche wurde schnell und professionell geräumt. Kurzfristiger Termin war kein Problem, Entsorgung inklusive. Gerne wieder.“</blockquote>
+      </figure>
+    </div>
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a href="https://www.google.com/search?q=AR+Entr%C3%BCmpelung+Main-Taunus-Kreis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-800 transition">
+        <i aria-hidden="true" class="fa-brands fa-google"></i> Alle Bewertungen auf Google ansehen
+      </a>
+      <span class="text-slate-300 hidden sm:inline">·</span>
+      <a href="https://www.google.com/search?q=AR+Entr%C3%BCmpelung+Main-Taunus-Kreis" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold text-slate-600 hover:text-brand-700 transition">
+        <i aria-hidden="true" class="fa-solid fa-pen"></i> Jetzt bewerten
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Über uns / Warum -->
+<section id="warum" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Warum AR Entrümpelung</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Ihr Entrümpelungs-Partner im Main-Taunus- und Hochtaunus-Kreis</h2>
+      <p class="text-lg text-slate-600 mb-9">Als regionaler Betrieb stehen wir für klare Absprachen: Sie wissen vorher, was passiert und was es kostet. Wir erscheinen pünktlich, arbeiten diskret und übergeben besenrein.</p>
+      <div class="space-y-6">
+        <div class="reveal flex gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-people-carry-box"></i></span>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Zuverlässiges Team</h3>
+            <p class="text-slate-600 text-[15px]">Eingespielte Abläufe und sorgfältiger Umgang mit Ihrem Eigentum und dem Gebäude – vom Treppenhaus bis zum Parkett.</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-user-shield"></i></span>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Absolute Diskretion</h3>
+            <p class="text-slate-600 text-[15px]">Gerade bei Nachlässen und Messi-Wohnungen arbeiten wir respektvoll und ohne Aufsehen in der Nachbarschaft.</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-bolt"></i></span>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Schnelle Abwicklung</h3>
+            <p class="text-slate-600 text-[15px]">Kurzfristige Termine möglich – von der Besichtigung bis zur Übergabe vergehen oft nur wenige Tage.</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-shield-halved"></i></span>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Versichertes Personal</h3>
+            <p class="text-slate-600 text-[15px]">Unser Team ist für Schäden vor Ort versichert – Ihr Eigentum und Gebäude sind abgesichert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="grid grid-cols-2 gap-5">
+        <div class="reveal bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <i aria-hidden="true" class="fa-solid fa-magnifying-glass-location text-2xl text-brand-700 mb-3"></i>
+          <p class="font-bold text-slate-900">Besichtigung &amp; Angebot</p>
+          <p class="text-slate-500 text-sm mt-1">100&nbsp;% kostenlos und unverbindlich</p>
+        </div>
+        <div class="reveal d1 bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <i aria-hidden="true" class="fa-solid fa-file-signature text-2xl text-brand-700 mb-3"></i>
+          <p class="font-bold text-slate-900">Festpreis</p>
+          <p class="text-slate-500 text-sm mt-1">Der genannte Preis gilt – ohne versteckte Kosten</p>
+        </div>
+        <div class="reveal bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <i aria-hidden="true" class="fa-solid fa-clock text-2xl text-brand-700 mb-3"></i>
+          <p class="font-bold text-slate-900">Reaktionszeit</p>
+          <p class="text-slate-500 text-sm mt-1">Rückmeldung in der Regel innerhalb von 24&nbsp;h</p>
+        </div>
+        <div class="reveal d1 bg-brand-700 rounded-xl p-6 text-white">
+          <i aria-hidden="true" class="fa-solid fa-broom text-2xl mb-3 text-blue-200"></i>
+          <p class="font-bold">Besenrein garantiert</p>
+          <p class="text-blue-100 text-sm mt-1">Sauber übergeben – bereit für Vermieter, Verkauf oder Renovierung</p>
+        </div>
+      </div>
+      <div class="reveal mt-5 bg-white border border-slate-200 rounded-xl p-6">
+        <h3 class="font-bold text-slate-900 mb-3"><i aria-hidden="true" class="fa-solid fa-calculator text-brand-700 mr-2"></i>So entsteht Ihr Festpreis</h3>
+        <ul class="space-y-2 text-[15px] text-slate-600">
+          <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-1"></i> Menge und Volumen des Räumguts</li>
+          <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-1"></i> Zugänglichkeit: Etage, Aufzug, Trageweg</li>
+          <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-1"></i> Art der Entsorgung</li>
+          <li class="flex gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700 mt-1"></i> Gewünschter Zeitrahmen</li>
+        </ul>
+        <p class="text-sm text-slate-600 mt-4">Nach der kostenlosen Besichtigung erhalten Sie einen verbindlichen Festpreis – es gilt der genannte Preis, ohne Nachberechnung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ablauf -->
+<section id="ablauf" class="py-20 lg:py-28 bg-slate-50 border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">So läuft es ab</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">In vier Schritten zur freien Fläche</h2>
+      <p class="text-lg text-slate-600">Vom ersten Anruf bis zur besenreinen Übergabe – transparent und ohne Überraschungen.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal bg-white border border-slate-200 rounded-xl p-7">
+        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">1</span>
+        <h3 class="font-bold text-slate-900 mb-2">Kontakt aufnehmen</h3>
+        <p class="text-slate-600 text-[15px]">Per Anruf, WhatsApp oder über das Kontaktformular – wie es Ihnen am liebsten ist.</p>
+      </div>
+      <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7">
+        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">2</span>
+        <h3 class="font-bold text-slate-900 mb-2">Kostenlose Besichtigung</h3>
+        <p class="text-slate-600 text-[15px]">Wir schauen uns alles vor Ort an und klären offene Fragen – unverbindlich.</p>
+      </div>
+      <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7">
+        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">3</span>
+        <h3 class="font-bold text-slate-900 mb-2">Festpreis-Angebot</h3>
+        <p class="text-slate-600 text-[15px]">Sie erhalten ein klares, verbindliches Angebot ohne versteckte Kosten.</p>
+      </div>
+      <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7">
+        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">4</span>
+        <h3 class="font-bold text-slate-900 mb-2">Besenreine Übergabe</h3>
+        <p class="text-slate-600 text-[15px]">Wir räumen, entsorgen umweltgerecht und übergeben sauber gefegt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Häufige Fragen</span>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Fragen &amp; Antworten zur Entrümpelung</h2>
+      <p class="text-lg text-slate-600">Die wichtigsten Antworten vorab – alles Weitere klären wir gerne bei der kostenlosen Besichtigung.</p>
+    </div>
+    <div class="max-w-3xl space-y-4">
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Was kostet eine Entrümpelung?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Der Preis hängt von der Menge des Räumguts, der Größe des Objekts, der Zugänglichkeit (Etage, Aufzug, Trageweg) und der Art der Entsorgung ab. Deshalb kommen wir zur kostenlosen, unverbindlichen Besichtigung – danach erhalten Sie einen verbindlichen Festpreis ohne versteckte Kosten.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Wie schnell bekomme ich einen Termin und wie lange dauert die Räumung?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Wir melden uns in der Regel innerhalb von 24 Stunden, kurzfristige Termine sind möglich. Die Dauer hängt von Größe und Menge ab – viele Objekte sind innerhalb von ein bis zwei Tagen geräumt; den genauen Zeitrahmen nennen wir Ihnen nach der Besichtigung.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Muss ich bei der Entrümpelung anwesend sein?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Nein, nicht zwingend. Nach der Besichtigung und Schlüsselübergabe erledigen wir alles selbstständig und übergeben das Objekt anschließend besenrein.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Werden Wertgegenstände auf den Preis angerechnet?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Bei der Besichtigung sichten wir vorhandene Wertgegenstände. Ob und in welcher Höhe eine Anrechnung möglich ist, besprechen wir transparent vor Ort – das Ergebnis fließt in Ihr Festpreis-Angebot ein.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Was passiert mit den Sachen?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Wir trennen fachgerecht, entsorgen umweltgerecht und führen Gegenstände der Verwertung zu, wo das möglich ist.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Sind Sie versichert?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Ja, unser Team ist für Schäden vor Ort versichert – Ihr Eigentum und das Gebäude sind abgesichert.</p>
+      </details>
+      <details class="reveal bg-white border border-slate-200 rounded-xl group">
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-6 font-bold text-slate-900">
+          Übernehmen Sie auch Messi-Wohnungen und Nachlässe?
+          <i aria-hidden="true" class="fa-solid fa-chevron-down text-brand-700 text-sm transition-transform group-open:rotate-180"></i>
+        </summary>
+        <p class="px-6 pb-6 text-slate-600 text-[15px]">Ja. Gerade bei Nachlässen und Messi-Wohnungen arbeiten wir diskret, respektvoll und ohne Aufsehen in der Nachbarschaft.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Kontakt -->
+<section id="kontakt" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2">
+        <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Kontakt</span>
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Kostenloses Angebot einholen</h2>
+        <p class="text-slate-600 mb-8">Beschreiben Sie kurz Ihr Vorhaben – wir melden uns in der Regel innerhalb von 24 Stunden mit einem Terminvorschlag für die kostenlose Besichtigung.</p>
+        <div class="space-y-3.5">
+          <a href="tel:+491733926466" class="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200 hover:border-brand-700 hover:shadow-sm transition group">
+            <span class="w-11 h-11 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center group-hover:bg-brand-700 group-hover:text-white transition-colors"><i aria-hidden="true" class="fa-solid fa-phone"></i></span>
+            <span><span class="block text-xs font-semibold uppercase tracking-wider text-slate-500">Telefon</span>
+            <span class="font-bold text-slate-900">0173 392 6466</span></span>
+          </a>
+          <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200 hover:border-emerald-500 hover:shadow-sm transition group">
+            <span class="w-11 h-11 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg group-hover:bg-emerald-500 group-hover:text-white transition-colors"><i aria-hidden="true" class="fa-brands fa-whatsapp"></i></span>
+            <span><span class="block text-xs font-semibold uppercase tracking-wider text-slate-500">WhatsApp</span>
+            <span class="font-bold text-slate-900">+49 173 392 6466</span></span>
+          </a>
+          <p class="flex items-start gap-3 text-sm text-slate-600 bg-emerald-50/60 border border-emerald-100 rounded-lg p-3.5">
+            <i aria-hidden="true" class="fa-solid fa-lightbulb text-emerald-600 mt-0.5"></i>
+            <span><span class="font-semibold text-slate-800">Tipp:</span> Schicken Sie uns einfach Fotos der Räume per WhatsApp – Sie erhalten schnell eine erste Einschätzung.</span>
+          </p>
+          <a href="mailto:ardienstleistung300@gmail.com" class="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200 hover:border-brand-700 hover:shadow-sm transition group">
+            <span class="w-11 h-11 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center group-hover:bg-brand-700 group-hover:text-white transition-colors"><i aria-hidden="true" class="fa-solid fa-envelope"></i></span>
+            <span><span class="block text-xs font-semibold uppercase tracking-wider text-slate-500">E-Mail</span>
+            <span class="font-bold text-slate-900 break-all">ardienstleistung300@gmail.com</span></span>
+          </a>
+          <p class="flex items-start gap-3 text-sm text-slate-500 pt-2">
+            <i aria-hidden="true" class="fa-solid fa-location-dot text-brand-700 mt-0.5"></i>
+            Einsatzgebiet: Main-Taunus- &amp; Hochtaunus-Kreis samt Umgebung – u.&nbsp;a. Hofheim, Kelkheim, Bad Soden, Eschborn, Hattersheim, Bad Homburg, Oberursel, Frankfurt, Wiesbaden
+          </p>
+        </div>
+      </div>
+      <div class="lg:col-span-3">
+        <form id="contactForm" class="reveal bg-white rounded-xl border border-slate-200 shadow-sm p-8 lg:p-9">
+          <p class="text-sm text-slate-500 mb-4">Mit * markierte Felder sind Pflichtfelder.</p>
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-slate-800 mb-1.5">Name *</label>
+              <input id="name" name="name" required placeholder="Ihr Name" autocomplete="name"
+                class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-slate-800 mb-1.5">Telefon *</label>
+              <input id="phone" name="phone" type="tel" required placeholder="Für Rückruf und Terminabsprache" autocomplete="tel"
+                class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition">
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="email" class="block text-sm font-semibold text-slate-800 mb-1.5">E-Mail</label>
+              <input id="email" name="email" type="email" placeholder="ihre@email.de" autocomplete="email"
+                class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition">
+            </div>
+            <div>
+              <label for="art" class="block text-sm font-semibold text-slate-800 mb-1.5">Art des Auftrags *</label>
+              <select id="art" name="art" required
+                class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition">
+                <option value="" disabled selected>Bitte wählen …</option>
+                <option>Haushaltsauflösung</option>
+                <option>Wohnung / Keller / Dachboden</option>
+                <option>Betriebs- / Lagerräumung</option>
+                <option>Entsorgung / Sperrmüll</option>
+                <option>Nachlassauflösung</option>
+                <option>Messi-Wohnung</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-6">
+            <label for="msg" class="block text-sm font-semibold text-slate-800 mb-1.5">Nachricht</label>
+            <textarea id="msg" name="msg" rows="5" placeholder="Beschreiben Sie kurz Objekt, Größe (z. B. 3-Zimmer-Wohnung, Keller, Lagerfläche) und Ihren Wunschtermin."
+              class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition resize-y"></textarea>
+          </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold text-lg px-8 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+            Kostenloses Angebot anfordern
+          </button>
+          <p class="mt-3.5 text-center text-sm text-slate-600">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Anfrage – keine Weitergabe Ihrer Daten. Falls sich kein E-Mail-Fenster öffnet: <a href="tel:+491733926466" class="font-semibold text-brand-700 hover:underline">0173 392 6466</a> anrufen oder per <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="font-semibold text-emerald-600 hover:underline">WhatsApp</a> schreiben.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Einsatzgebiet -->
+<section id="einsatzgebiet" class="py-16 lg:py-20 bg-slate-50 border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mb-4">Entrümpelung im Main-Taunus- und Hochtaunus-Kreis</h2>
+    <p class="text-slate-600 max-w-3xl mb-3">Im <strong class="font-semibold text-slate-800">Main-Taunus-Kreis</strong> sind wir unter anderem in Hofheim am Taunus, Kelkheim, Bad Soden am Taunus, Eschborn und Hattersheim für Sie im Einsatz.</p>
+    <p class="text-slate-600 max-w-3xl mb-5">Im <strong class="font-semibold text-slate-800">Hochtaunus-Kreis</strong> übernehmen wir Entrümpelungen und Haushaltsauflösungen unter anderem in Bad Homburg und Oberursel. Darüber hinaus sind wir auch in Frankfurt am Main, Wiesbaden und der umliegenden Region für Sie tätig.</p>
+    <ul class="flex flex-wrap gap-2 text-sm font-medium text-slate-700">
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Hofheim am Taunus</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Kelkheim</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Bad Soden am Taunus</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Eschborn</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Hattersheim</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Bad Homburg</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Oberursel</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Frankfurt am Main</li>
+      <li class="bg-white border border-slate-200 rounded-full px-3.5 py-1.5">Wiesbaden</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-400">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/logo.jpg" width="675" height="675" alt="AR Entrümpelung Logo" class="w-11 h-11 rounded-full object-cover">
+          <span class="text-lg font-bold text-white">AR Entrümpelung</span>
+        </div>
+        <p class="max-w-sm text-[15px]">Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebs- &amp; Lagerräumungen im Main-Taunus- und Hochtaunus-Kreis – diskret, schnell und besenrein.</p>
+        <a href="https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/" target="_blank" rel="noopener"
+           class="mt-5 inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
+          <i aria-hidden="true" class="fa-brands fa-facebook-f"></i> Auf Facebook folgen
+        </a>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Navigation</h3>
+        <nav aria-label="Footer">
+          <ul class="space-y-2 text-[15px]">
+            <li><a href="#leistungen" class="hover:text-white transition">Leistungen</a></li>
+            <li><a href="#referenzen" class="hover:text-white transition">Referenzen</a></li>
+            <li><a href="#warum" class="hover:text-white transition">Über uns</a></li>
+            <li><a href="#ablauf" class="hover:text-white transition">Ablauf</a></li>
+            <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+            <li><a href="#kontakt" class="hover:text-white transition">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <h3 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Kontakt</h3>
+        <ul class="space-y-2.5 text-[15px]">
+          <li><a href="tel:+491733926466" class="inline-flex items-center gap-3 hover:text-white transition"><i aria-hidden="true" class="fa-solid fa-phone text-blue-400"></i> 0173 392 6466</a></li>
+          <li><a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="inline-flex items-center gap-3 hover:text-white transition"><i aria-hidden="true" class="fa-brands fa-whatsapp text-emerald-400"></i> WhatsApp schreiben</a></li>
+          <li><a href="mailto:ardienstleistung300@gmail.com" class="inline-flex items-center gap-3 hover:text-white transition break-all"><i aria-hidden="true" class="fa-solid fa-envelope text-blue-400"></i> ardienstleistung300@gmail.com</a></li>
+          <li class="inline-flex items-center gap-3"><i aria-hidden="true" class="fa-solid fa-location-dot text-blue-400"></i> Main-Taunus- &amp; Hochtaunus-Kreis</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+      <span>© <span id="year">2026</span> AR Entrümpelung – Alle Rechte vorbehalten.</span>
+      <span class="flex gap-5">
+        <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a>
+        <a href="agb.html" class="hover:text-white transition">AGB</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp (Desktop) -->
+<a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" aria-label="WhatsApp schreiben"
+   class="hidden sm:flex fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-[26px] shadow-lg transition items-center justify-center">
+  <i aria-hidden="true" class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Mobile Aktionsleiste -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 border-t border-slate-200 shadow-[0_-4px_16px_rgba(15,23,42,.12)] bg-white pb-[env(safe-area-inset-bottom)]">
+  <a href="tel:+491733926466" class="flex items-center justify-center gap-2 bg-brand-700 text-white font-bold py-3.5"><i aria-hidden="true" class="fa-solid fa-phone"></i> Anrufen</a>
+  <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold py-3.5"><i aria-hidden="true" class="fa-brands fa-whatsapp text-lg"></i> WhatsApp</a>
+</div>
+<div class="sm:hidden h-[calc(3.5rem+env(safe-area-inset-bottom))]"></div>
+
+<!-- Toast -->
+<div class="toast bg-slate-900 text-white font-medium px-6 py-3.5 rounded-lg shadow-xl max-w-[92vw] text-center" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Header-Schatten beim Scrollen (auch initial, z. B. bei Anker-Aufruf)
+  const header = document.getElementById('siteHeader');
+  const setShadow = () => header.classList.toggle('shadow-md', scrollY > 8);
+  addEventListener('scroll', setShadow, {passive:true});
+  setShadow();
+
+  // Mobile Menü
+  const burger = document.getElementById('burger');
+  const mMenu = document.getElementById('mobileMenu');
+  const OPEN = 'max-h-[30rem]';
+  const setMenu = open => {
+    mMenu.classList.toggle(OPEN, open);
+    mMenu.toggleAttribute('inert', !open);
+    burger.setAttribute('aria-expanded', String(open));
+  };
+  burger.addEventListener('click', () => setMenu(!mMenu.classList.contains(OPEN)));
+  mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mMenu.classList.contains(OPEN)) { setMenu(false); burger.focus(); }
+  });
+
+  // Dezentes Einblenden beim Scrollen
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: .1, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  // Jahr aktuell halten
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Formular → E-Mail + Hinweis
+  document.getElementById('contactForm').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const f = ev.target;
+    const betreff = encodeURIComponent('Anfrage – ' + f.art.value);
+    const body = encodeURIComponent(
+      'Guten Tag,\r\n\r\nich bitte um ein kostenloses Angebot.\r\n\r\n' +
+      'Name: ' + f.name.value + '\r\n' +
+      'Telefon: ' + f.phone.value + '\r\n' +
+      'E-Mail: ' + (f.email.value || '-') + '\r\n' +
+      'Art des Auftrags: ' + f.art.value + '\r\n\r\n' +
+      'Nachricht:\r\n' + (f.msg.value || '-') + '\r\n\r\nViele Grüße\r\n' + f.name.value
+    );
+    location.href = 'mailto:ardienstleistung300@gmail.com?subject=' + betreff + '&body=' + body;
+    const t = document.getElementById('toast');
+    t.textContent = 'Ihr E-Mail-Programm öffnet sich. Falls nicht: Rufen Sie uns an unter 0173 392 6466 oder schreiben Sie per WhatsApp.';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 7000);
+  });
+</script>
+</body>
+</html>
