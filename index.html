@@ -6,10 +6,9 @@
 <title>Entrümpelung & Haushaltsauflösung Main-Taunus | AR Entrümpelung</title>
 <meta name="description" content="Entrümpelung, Haushaltsauflösung & Räumung im Main-Taunus- & Hochtaunus-Kreis. Kostenlose Besichtigung, Festpreis, besenrein. ☎ 0173 392 6466">
 <meta name="robots" content="index, follow">
-<!-- TODO vor Go-Live: Sobald eine echte Domain existiert, hier ergänzen:
-     <link rel="canonical" href="https://ar-entruempelung-website.vercel.app/">
-     <meta property="og:url" content="https://ar-entruempelung-website.vercel.app/">
-     und og:image sowie JSON-LD image/logo auf absolute https://-URLs umstellen. -->
+<!-- Bei eigener Domain: canonical + og:url anpassen -->
+<link rel="canonical" href="https://ar-entruempelung-website.vercel.app/">
+<meta property="og:url" content="https://ar-entruempelung-website.vercel.app/">
 <meta property="og:title" content="AR Entrümpelung – Entrümpelung & Haushaltsauflösung">
 <meta property="og:description" content="Professionelle Entrümpelungen, Haushaltsauflösungen und Räumungen im Main-Taunus- und Hochtaunus-Kreis. Kostenlose Besichtigung & Festpreisgarantie.">
 <meta property="og:type" content="website">
@@ -49,6 +48,7 @@
   "telephone": "+491733926466",
   "email": "ardienstleistung300@gmail.com",
   "priceRange": "€€",
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "33"},
   "areaServed": [
     {"@type": "City", "name": "Hofheim am Taunus"},
     {"@type": "City", "name": "Kelkheim"},
@@ -121,6 +121,11 @@
     #mobileMenu{transition:none}
   }
   ::placeholder{color:#64748b;opacity:1}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .floaty{animation:floaty 4s ease-in-out infinite}
+  @keyframes waPulse{to{box-shadow:0 0 0 16px rgba(16,185,129,0)}}
+  .wa-pulse{box-shadow:0 0 0 0 rgba(16,185,129,.45);animation:waPulse 2.2s infinite}
+  @media (prefers-reduced-motion:reduce){.floaty,.wa-pulse{animation:none}}
 </style>
 </head>
 <body class="font-sans text-slate-700 bg-white antialiased">
@@ -139,11 +144,11 @@
 <header id="siteHeader" class="sticky top-0 z-50 bg-white border-b border-slate-200 transition-shadow">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="flex items-center justify-between h-[76px]">
-      <a href="#top" class="flex items-center gap-3">
+      <a href="#top" class="flex shrink-0 items-center gap-3">
         <img src="assets/logo.jpg" width="675" height="675" alt="AR Entrümpelung Logo" class="w-12 h-12 rounded-full object-cover border border-slate-200">
         <span class="leading-tight">
-          <span class="block text-lg font-bold tracking-tight text-slate-900">AR Entrümpelung</span>
-          <span class="block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500">Entrümpelung · Räumung · Auflösung</span>
+          <span class="block text-lg font-bold tracking-tight text-slate-900 whitespace-nowrap">AR Entrümpelung</span>
+          <span class="hidden sm:block text-[11px] font-medium uppercase tracking-[0.16em] text-slate-500 whitespace-nowrap">Entrümpelung · Räumung · Auflösung</span>
         </span>
       </a>
       <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-8 font-medium text-slate-600">
@@ -192,11 +197,17 @@
 <section id="top" class="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
     <div>
-      <span class="inline-flex items-center gap-2 border border-slate-200 bg-white text-slate-600 text-sm font-medium rounded-full px-4 py-1.5 mb-6">
-        <i aria-hidden="true" class="fa-solid fa-location-dot text-brand-700"></i> Main-Taunus- &amp; Hochtaunus-Kreis
-      </span>
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="inline-flex items-center gap-2 border border-slate-200 bg-white text-slate-600 text-sm font-medium rounded-full px-4 py-1.5">
+          <i aria-hidden="true" class="fa-solid fa-location-dot text-brand-700"></i> Main-Taunus- &amp; Hochtaunus-Kreis
+        </span>
+        <a href="#bewertungen" class="inline-flex items-center gap-2 border border-amber-200 bg-amber-50 hover:border-amber-300 text-sm font-semibold text-slate-800 rounded-full px-4 py-1.5 transition">
+          <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+          4,9 <span class="text-amber-400" aria-hidden="true">★★★★★</span> <span class="text-slate-500 font-medium">33 Rezensionen</span>
+        </a>
+      </div>
       <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-[1.15] mb-5">
-        Wir schaffen Platz.<br>Diskret, schnell und <span class="text-brand-700">besenrein</span>.
+        Wir schaffen Platz.<br>Diskret, schnell und <span class="bg-gradient-to-r from-brand-600 to-brand-900 bg-clip-text text-transparent">besenrein</span>.
       </h1>
       <p class="text-lg text-slate-600 mb-8 max-w-xl">
         Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebsräumungen in Hofheim, Kelkheim, Bad Homburg, Oberursel und der gesamten Region – mit kostenloser Besichtigung, verbindlichem Festpreis und einem Team, das sauber und pünktlich arbeitet.
@@ -216,7 +227,16 @@
       </ul>
     </div>
     <div class="relative">
-      <img src="assets/nachher-flaeche-1.webp" fetchpriority="high" decoding="async" width="900" height="1200" alt="Besenrein geräumte Gewerbefläche nach Betriebsräumung im Main-Taunus-Kreis" class="w-full h-[420px] lg:h-[520px] object-cover rounded-xl border border-slate-200 shadow-md">
+      <div aria-hidden="true" class="absolute -inset-8 bg-gradient-to-tr from-brand-100 via-transparent to-brand-50 rounded-[2.5rem] blur-2xl opacity-80 pointer-events-none"></div>
+      <img src="assets/nachher-flaeche-1.webp" fetchpriority="high" decoding="async" width="900" height="1200" alt="Besenrein geräumte Gewerbefläche nach Betriebsräumung im Main-Taunus-Kreis" class="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover rounded-xl border border-slate-200 shadow-md">
+      <span class="absolute top-4 right-4 bg-brand-700/95 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded shadow-md">NACHHER</span>
+      <a href="#bewertungen" class="floaty absolute -top-5 left-4 sm:left-auto sm:-right-3 lg:-right-6 bg-white rounded-xl shadow-xl border border-slate-100 px-4 py-3 flex items-center gap-3">
+        <svg aria-hidden="true" class="w-7 h-7" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+        <span class="leading-tight">
+          <span class="block font-bold text-slate-900">4,9 <span class="text-amber-400 text-sm">★★★★★</span></span>
+          <span class="block text-xs text-slate-500 font-medium">33 Google-Rezensionen</span>
+        </span>
+      </a>
       <figure class="absolute -left-4 lg:-left-8 bottom-8 w-40 lg:w-48 rounded-lg overflow-hidden border-4 border-white shadow-xl hidden sm:block">
         <img src="assets/vorher-keller.webp" loading="lazy" width="901" height="1200" alt="Vollgestellter Keller vor der Entrümpelung" class="w-full h-32 lg:h-36 object-cover">
         <figcaption class="bg-slate-800 text-white text-[11px] font-semibold tracking-wider text-center py-1.5">VORHER</figcaption>
@@ -244,7 +264,7 @@
       <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-recycle"></i></span>
       <span class="font-semibold text-slate-800 text-[15px] leading-snug">Umweltgerechte Entsorgung</span>
     </div>
-    <div class="flex items-center gap-3.5">
+    <div class="flex items-center gap-3.5 col-span-2 md:col-span-1 justify-center md:justify-start">
       <span class="w-11 h-11 shrink-0 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center text-lg"><i aria-hidden="true" class="fa-solid fa-broom"></i></span>
       <span class="font-semibold text-slate-800 text-[15px] leading-snug">Besenreine Übergabe</span>
     </div>
@@ -262,8 +282,8 @@
 
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <article class="reveal bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-        <img src="assets/haushalt.webp" width="900" height="1200" alt="Haushaltsauflösung einer Wohnung im Hochtaunus-Kreis – vorher" class="h-48 w-full object-cover" loading="lazy">
+      <article class="reveal group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+        <img src="assets/haushalt.webp" width="900" height="1200" alt="Haushaltsauflösung einer Wohnung im Hochtaunus-Kreis – vorher" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-house-circle-check text-brand-700"></i> Haushaltsauflösungen</h3>
           <p class="text-slate-600 text-[15px] mb-5">Komplette Auflösung von Wohnungen und Häusern – inklusive Nachlass- und Messi-Wohnungen, sorgfältig und respektvoll.</p>
@@ -276,8 +296,8 @@
         </div>
       </article>
       <!-- Card 2 -->
-      <article class="reveal d1 bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-        <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach Betriebsräumung" class="h-48 w-full object-cover object-[center_30%]" loading="lazy">
+      <article class="reveal d1 group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+        <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach Betriebsräumung" class="h-48 w-full object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-warehouse text-brand-700"></i> Betriebs- &amp; Lagerräumungen</h3>
           <p class="text-slate-600 text-[15px] mb-5">Büros, Lager und Geschäftsräume werden termingerecht geräumt – auf Wunsch außerhalb Ihrer Geschäftszeiten.</p>
@@ -290,8 +310,8 @@
         </div>
       </article>
       <!-- Card 3 -->
-      <article class="reveal d2 bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-        <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="h-48 w-full object-cover object-top" loading="lazy">
+      <article class="reveal d2 group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+        <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="h-48 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-truck-fast text-brand-700"></i> Entsorgung &amp; Sperrmüll</h3>
           <p class="text-slate-600 text-[15px] mb-5">Abholung und umweltgerechte Entsorgung – fachgerecht getrennt und wo möglich der Verwertung zugeführt.</p>
@@ -370,35 +390,38 @@
       </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <figure class="reveal bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+      <figure class="reveal bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">AM</span>
           <div>
             <figcaption class="font-bold text-slate-900 leading-tight">Anna Mayr</figcaption>
             <span class="text-xs text-slate-500">Rezension auf Google</span>
           </div>
+          <svg aria-hidden="true" class="w-5 h-5 ml-auto self-start opacity-80" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
         </div>
         <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
         <blockquote class="text-slate-600 text-[15px]">„Die Arbeit wurde sehr schnell und professionell erledigt – innerhalb einer Stunde war der komplette Keller ausgeräumt. Die Beratung war freundlich, kompetent und angenehm. Ich bin sehr zufrieden und kann AR Entrümpelung absolut weiterempfehlen!“</blockquote>
       </figure>
-      <figure class="reveal d1 bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+      <figure class="reveal d1 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">SZ</span>
           <div>
             <figcaption class="font-bold text-slate-900 leading-tight">Sascha Ziehn</figcaption>
             <span class="text-xs text-slate-500">Rezension auf Google</span>
           </div>
+          <svg aria-hidden="true" class="w-5 h-5 ml-auto self-start opacity-80" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
         </div>
         <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
         <blockquote class="text-slate-600 text-[15px]">„Super Service! Wir haben mit der Firma Arnold in der Familie schon zum zweiten Mal eine Entrümpelung und einen Umzug durchführen lassen und waren jeweils sehr zufrieden. Sehr zuverlässig, mitdenkend, ordentlich und freundlich.“</blockquote>
       </figure>
-      <figure class="reveal d2 bg-white rounded-xl border border-slate-200 shadow-sm p-7 flex flex-col">
+      <figure class="reveal d2 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">SD</span>
           <div>
             <figcaption class="font-bold text-slate-900 leading-tight">Sahin Demir</figcaption>
             <span class="text-xs text-slate-500">Rezension auf Google</span>
           </div>
+          <svg aria-hidden="true" class="w-5 h-5 ml-auto self-start opacity-80" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
         </div>
         <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
         <blockquote class="text-slate-600 text-[15px]">„Diese Jungs sind einfach Klasse! Die Preise und Organisation, so auch Freundlichkeit sind einfach nur exzellent und mehr als zufriedenstellend! Kann man nur empfehlen!“</blockquote>
@@ -500,22 +523,22 @@
       <p class="text-lg text-slate-600">Vom ersten Anruf bis zur besenreinen Übergabe – transparent und ohne Überraschungen.</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="reveal bg-white border border-slate-200 rounded-xl p-7">
+      <div class="reveal bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
         <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">1</span>
         <h3 class="font-bold text-slate-900 mb-2">Kontakt aufnehmen</h3>
         <p class="text-slate-600 text-[15px]">Per Anruf, WhatsApp oder über das Kontaktformular – wie es Ihnen am liebsten ist.</p>
       </div>
-      <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7">
+      <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
         <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">2</span>
         <h3 class="font-bold text-slate-900 mb-2">Kostenlose Besichtigung</h3>
         <p class="text-slate-600 text-[15px]">Wir schauen uns alles vor Ort an und klären offene Fragen – unverbindlich.</p>
       </div>
-      <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7">
+      <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
         <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">3</span>
         <h3 class="font-bold text-slate-900 mb-2">Festpreis-Angebot</h3>
         <p class="text-slate-600 text-[15px]">Sie erhalten ein klares, verbindliches Angebot ohne versteckte Kosten.</p>
       </div>
-      <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7">
+      <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
         <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">4</span>
         <h3 class="font-bold text-slate-900 mb-2">Besenreine Übergabe</h3>
         <p class="text-slate-600 text-[15px]">Wir räumen, entsorgen umweltgerecht und übergeben sauber gefegt.</p>
@@ -702,10 +725,16 @@
           <span class="text-lg font-bold text-white">AR Entrümpelung</span>
         </div>
         <p class="max-w-sm text-[15px]">Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebs- &amp; Lagerräumungen im Main-Taunus- und Hochtaunus-Kreis – diskret, schnell und besenrein.</p>
-        <a href="https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/" target="_blank" rel="noopener"
-           class="mt-5 inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
-          <i aria-hidden="true" class="fa-brands fa-facebook-f"></i> Auf Facebook folgen
-        </a>
+        <div class="mt-5 flex flex-wrap gap-2.5">
+          <a href="https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
+            <i aria-hidden="true" class="fa-brands fa-facebook-f"></i> Auf Facebook folgen
+          </a>
+          <a href="https://maps.google.com/?cid=17522685210784581738" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
+            <i aria-hidden="true" class="fa-brands fa-google"></i> 4,9 <span class="text-amber-400">★</span> auf Google
+          </a>
+        </div>
       </div>
       <div>
         <h3 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Navigation</h3>
@@ -744,7 +773,7 @@
 
 <!-- Floating WhatsApp (Desktop) -->
 <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" aria-label="WhatsApp schreiben"
-   class="hidden sm:flex fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-[26px] shadow-lg transition items-center justify-center">
+   class="wa-pulse hidden sm:flex fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-[26px] shadow-lg transition items-center justify-center hover:scale-110">
   <i aria-hidden="true" class="fa-brands fa-whatsapp"></i>
 </a>
 
