@@ -111,9 +111,27 @@
 }
 </script>
 <style>
-  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  :root{--ease:cubic-bezier(.22,1,.36,1)}
+  html{interpolate-size:allow-keywords}
+  h1,h2,h3{text-wrap:balance}
+  ::selection{background:#1D4ED8;color:#fff}
+  @media (pointer:fine){
+    ::-webkit-scrollbar{width:12px}
+    ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:8px;border:3px solid #fff}
+    ::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+  }
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .js .reveal.visible{opacity:1;transform:none}
-  .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+  .d1{transition-delay:.09s}.d2{transition-delay:.18s}.d3{transition-delay:.27s}
+  details::details-content{block-size:0;overflow:clip;transition:block-size .4s var(--ease),content-visibility .4s allow-discrete}
+  details[open]::details-content{block-size:auto}
+  nav[aria-label="Hauptnavigation"] a{position:relative}
+  nav[aria-label="Hauptnavigation"] a::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:#1D4ED8;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+  nav[aria-label="Hauptnavigation"] a:hover::after,nav[aria-label="Hauptnavigation"] a.nav-active::after{transform:scaleX(1)}
+  .js img[loading="lazy"]{opacity:0;transition:opacity .6s ease}
+  .js img[loading="lazy"].loaded{opacity:1}
+  @keyframes heroIn{from{transform:scale(1.045)}to{transform:scale(1)}}
+  .js .hero-img{animation:heroIn 1.2s var(--ease) both}
   .toast{position:fixed;left:50%;bottom:34px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;transition:.3s;z-index:100}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   @media (max-width:639px){.toast{bottom:84px}}
@@ -129,11 +147,18 @@
   .floaty{animation:floaty 4s ease-in-out infinite}
   @keyframes waPulse{to{box-shadow:0 0 0 16px rgba(16,185,129,0)}}
   .wa-pulse{box-shadow:0 0 0 0 rgba(16,185,129,.45);animation:waPulse 2.2s infinite}
-  @media (prefers-reduced-motion:reduce){.floaty,.wa-pulse{animation:none}}
+  @media (prefers-reduced-motion:reduce){
+    .floaty,.wa-pulse,.hero-img{animation:none}
+    details::details-content{transition:none}
+    nav[aria-label="Hauptnavigation"] a::after{transition:none}
+    .js img[loading="lazy"]{transition:none;opacity:1}
+    .lightbox,.lightbox img{transition:none}
+  }
   #progressBar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#2563EB,#1E3A8A);z-index:60;transition:width .1s linear}
-  .lightbox{position:fixed;inset:0;background:rgba(15,23,42,.93);display:none;align-items:center;justify-content:center;z-index:90;padding:20px}
-  .lightbox.open{display:flex}
-  .lightbox img{max-width:min(92vw,1000px);max-height:78vh;border-radius:12px;box-shadow:0 24px 64px rgba(0,0,0,.5)}
+  .lightbox{position:fixed;inset:0;background:rgba(15,23,42,.93);display:flex;align-items:center;justify-content:center;z-index:90;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
+  .lightbox.open{opacity:1;visibility:visible}
+  .lightbox img{max-width:min(92vw,1000px);max-height:78vh;border-radius:12px;box-shadow:0 24px 64px rgba(0,0,0,.5);transition:opacity .25s ease,transform .35s var(--ease)}
+  .lightbox:not(.open) img{transform:scale(.95)}
   .lb-btn{position:absolute;background:rgba(255,255,255,.14);color:#fff;width:44px;height:44px;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-size:17px;transition:background .2s;cursor:pointer;border:0}
   .lb-btn:hover{background:rgba(255,255,255,.3)}
   #lbClose{top:18px;right:18px}
@@ -160,7 +185,7 @@
 </div>
 
 <!-- Header -->
-<header id="siteHeader" class="sticky top-0 z-50 bg-white border-b border-slate-200 transition-shadow">
+<header id="siteHeader" class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200 transition-shadow">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="flex items-center justify-between h-[76px]">
       <a href="#top" class="flex shrink-0 items-center gap-3">
@@ -254,7 +279,7 @@
     </div>
     <div class="relative">
       <div aria-hidden="true" class="absolute -inset-8 bg-gradient-to-tr from-brand-100 via-transparent to-brand-50 rounded-[2.5rem] blur-2xl opacity-80 pointer-events-none"></div>
-      <img src="assets/nachher-flaeche-1.webp" fetchpriority="high" decoding="async" width="900" height="1200" alt="Besenrein geräumte Gewerbefläche nach Betriebsräumung im Main-Taunus-Kreis" class="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover rounded-xl border border-slate-200 shadow-md">
+      <img src="assets/nachher-flaeche-1.webp" fetchpriority="high" decoding="async" width="900" height="1200" alt="Besenrein geräumte Gewerbefläche nach Betriebsräumung im Main-Taunus-Kreis" class="hero-img relative w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover rounded-xl border border-slate-200 shadow-md">
       <span class="absolute top-4 left-4 bg-brand-700/95 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded shadow-md">NACHHER</span>
       <a href="#bewertungen" class="floaty absolute -top-5 right-3 lg:-right-6 bg-white rounded-xl shadow-xl border border-slate-100 px-4 py-3 flex items-center gap-3">
         <svg aria-hidden="true" class="w-7 h-7" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C36.9 42.6 44 38 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
@@ -308,7 +333,7 @@
 
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <article class="reveal group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
         <img src="assets/haushalt.webp" width="900" height="1200" alt="Haushaltsauflösung einer Wohnung im Hochtaunus-Kreis – vorher" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-house-circle-check text-brand-700"></i> Haushaltsauflösungen</h3>
@@ -322,7 +347,7 @@
         </div>
       </article>
       <!-- Card 2 -->
-      <article class="reveal d1 group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal d1 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
         <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach Betriebsräumung" class="h-48 w-full object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-warehouse text-brand-700"></i> Betriebs- &amp; Lagerräumungen</h3>
@@ -336,7 +361,7 @@
         </div>
       </article>
       <!-- Card 3 -->
-      <article class="reveal d2 group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal d2 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
         <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="h-48 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-truck-fast text-brand-700"></i> Entsorgung &amp; Sperrmüll</h3>
@@ -884,6 +909,13 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
+  // Lazy geladene Bilder sanft einblenden
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    const done = () => img.classList.add('loaded');
+    if (img.complete) done();
+    else { img.addEventListener('load', done, {once:true}); img.addEventListener('error', done, {once:true}); }
+  });
+
   // Jahr aktuell halten
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -917,7 +949,10 @@
   const lbShow = i => {
     lbIdx = (i + lbFigs.length) % lbFigs.length;
     const img = lbFigs[lbIdx].querySelector('img');
+    lbImg.style.opacity = '0';
+    lbImg.onload = () => { lbImg.style.opacity = '1'; };
     lbImg.src = img.src; lbImg.alt = img.alt;
+    if (lbImg.complete) lbImg.style.opacity = '1';
     lbCap.textContent = lbFigs[lbIdx].querySelector('figcaption').textContent;
   };
   const lbOpen = i => { lbShow(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
