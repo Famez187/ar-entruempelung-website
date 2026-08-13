@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: DOMAIN.de durch die echte Domain ersetzen
-Sitemap: https://DOMAIN.de/sitemap.xml
+Sitemap: https://ar-entruempelung-website.vercel.app/sitemap.xml

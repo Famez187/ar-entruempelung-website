@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: DOMAIN.de durch die echte Domain ersetzen -->
+<!-- Bei eigener Domain: URL hier anpassen -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DOMAIN.de/</loc>
+    <loc>https://ar-entruempelung-website.vercel.app/</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
 </urlset>
