@@ -34,7 +34,9 @@
     theme: {
       extend: {
         fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
-        colors: { brand: {50:'#EFF5FB',100:'#DCE9F5',200:'#BDD7EE',600:'#2563EB',700:'#1D4ED8',800:'#1E40AF',900:'#1E3A8A'} }
+        colors: { brand: {50:'#EFF5FB',100:'#DCE9F5',200:'#BDD7EE',600:'#2563EB',700:'#1D4ED8',800:'#1E40AF',900:'#1E3A8A'} },
+        boxShadow: { lift: '0 2px 4px rgba(15,23,42,.05), 0 8px 16px rgba(15,23,42,.07), 0 18px 36px rgba(29,78,216,.09)' },
+        transitionTimingFunction: { fluid: 'cubic-bezier(.16,1,.3,1)' }
       }
     }
   }
@@ -112,7 +114,7 @@
 }
 </script>
 <style>
-  :root{--ease:cubic-bezier(.22,1,.36,1)}
+  :root{--ease:cubic-bezier(.16,1,.3,1)}
   html{interpolate-size:allow-keywords}
   h1,h2,h3{text-wrap:balance}
   ::selection{background:#1D4ED8;color:#fff}
@@ -159,6 +161,8 @@
     nav[aria-label="Hauptnavigation"] a::after{transition:none}
     .js img[loading="lazy"]{transition:none;opacity:1}
     .lightbox,.lightbox img{transition:none}
+    .js a:active,.js button:active,.js summary:active,.js #referenzen figure:active{transform:none !important}
+    #mobileMenu nav,#faq details summary + p{transition:none;opacity:1;transform:none}
   }
   #progressBar{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,#2563EB,#1E3A8A);z-index:60;transform:scaleX(0);transform-origin:0 0;transition:transform .1s linear}
   .lightbox{position:fixed;inset:0;background:rgba(15,23,42,.93);display:flex;align-items:center;justify-content:center;z-index:90;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
@@ -175,6 +179,17 @@
   #toTop.show{opacity:1;pointer-events:auto;transform:none}
   #referenzen figure{cursor:zoom-in}
   nav a.nav-active{color:#1D4ED8;font-weight:600}
+  a,button{-webkit-tap-highlight-color:transparent}
+  .js a:active,.js button:active:not(.lb-btn){transform:scale(.97) !important;transition-duration:.09s}
+  .js summary:active,.js #referenzen figure:active{transform:scale(.985) !important;transition-duration:.09s}
+  .js .reveal:not(.visible),.js .rise{will-change:transform,opacity}
+  #progressBar{will-change:transform}
+  .lightbox img{will-change:transform,opacity}
+  #mobileMenu{transition:max-height .45s var(--ease)}
+  #mobileMenu nav{opacity:0;transform:translateY(-8px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+  #mobileMenu.max-h-\[30rem\] nav{opacity:1;transform:none}
+  #faq details summary + p{opacity:0;transform:translateY(-4px);transition:opacity .4s var(--ease) .06s,transform .4s var(--ease) .06s}
+  #faq details[open] summary + p{opacity:1;transform:none}
 </style>
 </head>
 <body class="font-sans text-slate-700 bg-white antialiased">
@@ -215,7 +230,7 @@
           <span class="w-9 h-9 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center"><i aria-hidden="true" class="fa-solid fa-phone text-sm"></i></span>
           0173 392 6466
         </a>
-        <a href="#kontakt" class="hidden sm:inline-flex whitespace-nowrap items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-5 py-2.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+        <a href="#kontakt" class="hidden sm:inline-flex whitespace-nowrap items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-5 py-2.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-lift hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
           Jetzt anfragen
         </a>
         <a href="tel:+491733926466" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg text-brand-700 hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-700" aria-label="Anrufen">
@@ -263,7 +278,7 @@
         Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebsräumungen in Hofheim, Kelkheim, Bad Homburg, Oberursel und der gesamten Region – mit kostenloser Besichtigung, verbindlichem Festpreis und einem Team, das sauber und pünktlich arbeitet.
       </p>
       <div class="rise rise-4 flex flex-wrap gap-3 mb-8">
-        <a href="#kontakt" class="inline-flex items-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-7 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+        <a href="#kontakt" class="inline-flex items-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold px-7 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-lift hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
           Kostenloses Angebot einholen <i aria-hidden="true" class="fa-solid fa-arrow-right text-sm"></i>
         </a>
         <a href="tel:+491733926466" class="inline-flex items-center gap-2.5 bg-white border border-slate-300 hover:border-brand-700 hover:text-brand-700 text-slate-800 font-semibold px-7 py-3.5 rounded-lg transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
@@ -339,7 +354,7 @@
 
     <div class="grid md:grid-cols-3 gap-6">
       <!-- Card 1 -->
-      <article class="reveal group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid flex flex-col">
         <img src="assets/haushalt.webp" width="900" height="1200" alt="Haushaltsauflösung einer Wohnung im Hochtaunus-Kreis – vorher" class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-house-circle-check text-brand-700"></i> Haushaltsauflösungen</h3>
@@ -353,7 +368,7 @@
         </div>
       </article>
       <!-- Card 2 -->
-      <article class="reveal d1 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal d1 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid flex flex-col">
         <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach Betriebsräumung" class="h-48 w-full object-cover object-[center_30%] transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-warehouse text-brand-700"></i> Betriebs- &amp; Lagerräumungen</h3>
@@ -367,7 +382,7 @@
         </div>
       </article>
       <!-- Card 3 -->
-      <article class="reveal d2 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <article class="reveal d2 group bg-white border border-slate-200 hover:border-brand-100 rounded-xl overflow-hidden hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid flex flex-col">
         <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="h-48 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]" loading="lazy">
         <div class="p-7 flex flex-col flex-1">
           <h3 class="text-lg font-bold text-slate-900 mb-2.5 flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-truck-fast text-brand-700"></i> Entsorgung &amp; Sperrmüll</h3>
@@ -397,32 +412,32 @@
       <p class="text-lg text-slate-600">Vom vollen Keller bis zur besenrein übergebenen Fläche. <span class="text-slate-400 text-base">Fotos zum Vergrößern anklicken.</span></p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/vorher-keller.webp" width="901" height="1200" alt="Vollgestellter Keller voller Kartons und Hausrat vor der Entrümpelung im Main-Taunus-Kreis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Keller voller Kartons &amp; Hausrat</figcaption>
       </figure>
-      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/nachher-flaeche-1.webp" width="900" height="1200" alt="Vollständig geräumte, besenreine Gewerbefläche nach der Räumung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-brand-700 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">NACHHER</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Gewerbefläche – vollständig geräumt</figcaption>
       </figure>
-      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/einsatz-gartenhaus.webp" width="900" height="1200" alt="Team von AR Entrümpelung bei der Räumung eines Gartenhauses" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-slate-600/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">IM EINSATZ</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Auch Gartenhäuser &amp; Außenbereiche</figcaption>
       </figure>
-      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/vorher-buero.webp" width="900" height="1200" alt="Vollständig eingerichtetes Büro vor der Betriebsauflösung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Büro vor der Auflösung</figcaption>
       </figure>
-      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal d1 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/nachher-flaeche-2.webp" width="1200" height="900" alt="Besenreine Lagerfläche nach der Betriebsräumung im Hochtaunus-Kreis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-brand-700 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">NACHHER</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Besenrein zur Übergabe</figcaption>
       </figure>
-      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
+      <figure class="reveal d2 group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid h-72">
         <img src="assets/vorher-scheune.webp" width="1200" height="900" alt="Scheune voller Sperrmüll vor der Entrümpelung" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
         <span class="absolute top-4 left-4 bg-slate-800/90 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded">VORHER</span>
         <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent text-white text-[15px] font-semibold p-4 pt-10">Scheune vor der Räumung</figcaption>
@@ -447,7 +462,7 @@
       </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <figure class="reveal bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
+      <figure class="reveal bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">AM</span>
           <div>
@@ -459,7 +474,7 @@
         <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
         <blockquote class="text-slate-600 text-[15px]">„Die Arbeit wurde sehr schnell und professionell erledigt – innerhalb einer Stunde war der komplette Keller ausgeräumt. Die Beratung war freundlich, kompetent und angenehm. Ich bin sehr zufrieden und kann AR Entrümpelung absolut weiterempfehlen!“</blockquote>
       </figure>
-      <figure class="reveal d1 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
+      <figure class="reveal d1 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">SZ</span>
           <div>
@@ -471,7 +486,7 @@
         <span class="text-amber-400 text-sm mb-3" aria-label="5 von 5 Sternen"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
         <blockquote class="text-slate-600 text-[15px]">„Super Service! Wir haben mit der Firma Arnold in der Familie schon zum zweiten Mal eine Entrümpelung und einen Umzug durchführen lassen und waren jeweils sehr zufrieden. Sehr zuverlässig, mitdenkend, ordentlich und freundlich.“</blockquote>
       </figure>
-      <figure class="reveal d2 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-7 flex flex-col">
+      <figure class="reveal d2 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lift hover:-translate-y-1 transition-all duration-300 ease-fluid p-7 flex flex-col">
         <div class="flex items-center gap-3 mb-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-brand-50 text-brand-700 font-bold flex items-center justify-center">SD</span>
           <div>
@@ -536,17 +551,17 @@
     </div>
     <div>
       <div class="grid grid-cols-2 gap-5">
-        <div class="reveal bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+        <div class="reveal bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid">
           <i aria-hidden="true" class="fa-solid fa-magnifying-glass-location text-2xl text-brand-700 mb-3"></i>
           <p class="font-bold text-slate-900">Besichtigung &amp; Angebot</p>
           <p class="text-slate-500 text-sm mt-1">100&nbsp;% kostenlos und unverbindlich</p>
         </div>
-        <div class="reveal d1 bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+        <div class="reveal d1 bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid">
           <i aria-hidden="true" class="fa-solid fa-file-signature text-2xl text-brand-700 mb-3"></i>
           <p class="font-bold text-slate-900">Festpreis</p>
           <p class="text-slate-500 text-sm mt-1">Der genannte Preis gilt – ohne versteckte Kosten</p>
         </div>
-        <div class="reveal bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+        <div class="reveal bg-brand-50 border border-brand-100 rounded-xl p-6 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 ease-fluid">
           <i aria-hidden="true" class="fa-solid fa-clock text-2xl text-brand-700 mb-3"></i>
           <p class="font-bold text-slate-900">Reaktionszeit</p>
           <p class="text-slate-500 text-sm mt-1">Rückmeldung in der Regel innerhalb von 24&nbsp;h</p>
@@ -580,22 +595,22 @@
       <p class="text-lg text-slate-600">Vom ersten Anruf bis zur besenreinen Übergabe – transparent und ohne Überraschungen.</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="reveal bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 hover:-translate-y-1 transition-all duration-300">
+      <div class="reveal bg-white border border-slate-200 rounded-xl p-7 hover:shadow-lift hover:border-brand-100 hover:-translate-y-1 transition-all duration-300 ease-fluid">
         <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">1</span>
         <h3 class="font-bold text-slate-900 mb-2">Kontakt aufnehmen</h3>
         <p class="text-slate-600 text-[15px]">Per Anruf, WhatsApp oder über das Kontaktformular – wie es Ihnen am liebsten ist.</p>
       </div>
-      <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 hover:-translate-y-1 transition-all duration-300">
+      <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-lift hover:border-brand-100 hover:-translate-y-1 transition-all duration-300 ease-fluid">
         <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">2</span>
         <h3 class="font-bold text-slate-900 mb-2">Kostenlose Besichtigung</h3>
         <p class="text-slate-600 text-[15px]">Wir schauen uns alles vor Ort an und klären offene Fragen – unverbindlich.</p>
       </div>
-      <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 hover:-translate-y-1 transition-all duration-300">
+      <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-lift hover:border-brand-100 hover:-translate-y-1 transition-all duration-300 ease-fluid">
         <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">3</span>
         <h3 class="font-bold text-slate-900 mb-2">Festpreis-Angebot</h3>
         <p class="text-slate-600 text-[15px]">Sie erhalten ein klares, verbindliches Angebot ohne versteckte Kosten.</p>
       </div>
-      <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 hover:-translate-y-1 transition-all duration-300">
+      <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-lift hover:border-brand-100 hover:-translate-y-1 transition-all duration-300 ease-fluid">
         <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">4</span>
         <h3 class="font-bold text-slate-900 mb-2">Besenreine Übergabe</h3>
         <p class="text-slate-600 text-[15px]">Wir räumen, entsorgen umweltgerecht und übergeben sauber gefegt.</p>
@@ -745,7 +760,7 @@
             <textarea id="msg" name="msg" rows="5" placeholder="Beschreiben Sie kurz Objekt, Größe (z. B. 3-Zimmer-Wohnung, Keller, Lagerfläche) und Ihren Wunschtermin."
               class="w-full rounded-lg border border-slate-300 px-4 py-3 bg-white focus:border-brand-700 focus:ring-2 focus:ring-brand-600/40 outline-none transition resize-y"></textarea>
           </div>
-          <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold text-lg px-8 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold text-lg px-8 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-lift hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
             Kostenloses Angebot anfordern
           </button>
           <p class="mt-3.5 text-center text-sm text-slate-600">Ihre Anfrage wird verschlüsselt übermittelt und vertraulich behandelt. Bei Problemen: <a href="tel:+491733926466" class="font-semibold text-brand-700 hover:underline">0173 392 6466</a> anrufen oder per <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="font-semibold text-emerald-600 hover:underline">WhatsApp</a> schreiben.</p>
@@ -786,10 +801,10 @@
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Bereit für freie Flächen?</h2>
     <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-9">Kostenlose Besichtigung, verbindlicher Festpreis, besenreine Übergabe – melden Sie sich jetzt, wir antworten in der Regel innerhalb von 24 Stunden.</p>
     <div class="flex flex-wrap justify-center gap-3.5">
-      <a href="tel:+491733926466" class="inline-flex items-center gap-2.5 bg-white text-brand-800 hover:bg-blue-50 font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-px">
+      <a href="tel:+491733926466" class="inline-flex items-center gap-2.5 bg-white text-brand-800 hover:bg-blue-50 font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-0.5">
         <i aria-hidden="true" class="fa-solid fa-phone"></i> 0173 392 6466
       </a>
-      <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-px">
+      <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-0.5">
         <i aria-hidden="true" class="fa-brands fa-whatsapp text-lg"></i> WhatsApp schreiben
       </a>
     </div>
