@@ -748,7 +748,7 @@
           <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-brand-700 hover:bg-brand-800 text-white font-semibold text-lg px-8 py-3.5 rounded-lg transition shadow-sm shadow-brand-700/20 hover:shadow-md hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700">
             Kostenloses Angebot anfordern
           </button>
-          <p class="mt-3.5 text-center text-sm text-slate-600">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Anfrage – keine Weitergabe Ihrer Daten. Falls sich kein E-Mail-Fenster öffnet: <a href="tel:+491733926466" class="font-semibold text-brand-700 hover:underline">0173 392 6466</a> anrufen oder per <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="font-semibold text-emerald-600 hover:underline">WhatsApp</a> schreiben.</p>
+          <p class="mt-3.5 text-center text-sm text-slate-600">Ihre Anfrage wird verschlüsselt übermittelt und vertraulich behandelt. Bei Problemen: <a href="tel:+491733926466" class="font-semibold text-brand-700 hover:underline">0173 392 6466</a> anrufen oder per <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="font-semibold text-emerald-600 hover:underline">WhatsApp</a> schreiben.</p>
         </form>
       </div>
     </div>
@@ -980,24 +980,51 @@
     if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
   });
 
-  // Formular → E-Mail + Hinweis
-  document.getElementById('contactForm').addEventListener('submit', ev => {
-    ev.preventDefault();
-    const f = ev.target;
-    const betreff = encodeURIComponent('Anfrage – ' + f.art.value);
-    const body = encodeURIComponent(
-      'Guten Tag,\r\n\r\nich bitte um ein kostenloses Angebot.\r\n\r\n' +
-      'Name: ' + f.name.value + '\r\n' +
-      'Telefon: ' + f.phone.value + '\r\n' +
-      'E-Mail: ' + (f.email.value || '-') + '\r\n' +
-      'Art des Auftrags: ' + f.art.value + '\r\n\r\n' +
-      'Nachricht:\r\n' + (f.msg.value || '-') + '\r\n\r\nViele Grüße\r\n' + f.name.value
-    );
-    location.href = 'mailto:ardienstleistung300@gmail.com?subject=' + betreff + '&body=' + body;
+  // Formular → Supabase-Datenbank, Fallback: E-Mail-Programm (mailto)
+  const SB_URL = 'https://mzitywosxtjxtevasrcs.supabase.co/rest/v1/anfragen';
+  const SB_KEY = 'sb_publishable_C2cnOYCw29iWiqr_B9vHNg_QvE8LpVc';
+  const showToast = msg => {
     const t = document.getElementById('toast');
-    t.textContent = 'Ihr E-Mail-Programm öffnet sich. Falls nicht: Rufen Sie uns an unter 0173 392 6466 oder schreiben Sie per WhatsApp.';
+    t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 7000);
+  };
+  document.getElementById('contactForm').addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const f = ev.target;
+    const el = f.elements;
+    const btn = f.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    try {
+      const res = await fetch(SB_URL, {
+        method: 'POST',
+        headers: {apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal'},
+        body: JSON.stringify({
+          name: el.name.value,
+          telefon: el.phone.value,
+          email: el.email.value || null,
+          art: el.art.value,
+          nachricht: el.msg.value || null
+        })
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      f.reset();
+      showToast('Vielen Dank! Ihre Anfrage ist eingegangen – wir melden uns in der Regel innerhalb von 24 Stunden.');
+    } catch {
+      const betreff = encodeURIComponent('Anfrage – ' + el.art.value);
+      const body = encodeURIComponent(
+        'Guten Tag,\r\n\r\nich bitte um ein kostenloses Angebot.\r\n\r\n' +
+        'Name: ' + el.name.value + '\r\n' +
+        'Telefon: ' + el.phone.value + '\r\n' +
+        'E-Mail: ' + (el.email.value || '-') + '\r\n' +
+        'Art des Auftrags: ' + el.art.value + '\r\n\r\n' +
+        'Nachricht:\r\n' + (el.msg.value || '-') + '\r\n\r\nViele Grüße\r\n' + el.name.value
+      );
+      location.href = 'mailto:ardienstleistung300@gmail.com?subject=' + betreff + '&body=' + body;
+      showToast('Ihr E-Mail-Programm öffnet sich. Falls nicht: Rufen Sie uns an unter 0173 392 6466 oder schreiben Sie per WhatsApp.');
+    } finally {
+      btn.disabled = false;
+    }
   });
 </script>
 </body>
