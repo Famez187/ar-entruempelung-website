@@ -12,9 +12,11 @@
 <meta property="og:title" content="AR Entrümpelung – Entrümpelung & Haushaltsauflösung">
 <meta property="og:description" content="Professionelle Entrümpelungen, Haushaltsauflösungen und Räumungen im Main-Taunus- und Hochtaunus-Kreis. Kostenlose Besichtigung & Festpreisgarantie.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/cover.jpg">
+<meta property="og:image" content="https://ar-entruempelung-website.vercel.app/assets/cover.jpg">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="AR Entrümpelung">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1D4ED8">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preload" as="image" href="assets/nachher-flaeche-1.webp" fetchpriority="high">
 
@@ -47,6 +49,8 @@
   "description": "Professionelle Entrümpelungen, Haushaltsauflösungen und Betriebs- & Lagerräumungen im Main-Taunus- und Hochtaunus-Kreis.",
   "telephone": "+491733926466",
   "email": "ardienstleistung300@gmail.com",
+  "address": {"@type": "PostalAddress", "streetAddress": "Untergasse 9", "postalCode": "61440", "addressLocality": "Oberursel (Taunus)", "addressCountry": "DE"},
+  "hasMap": "https://maps.google.com/?cid=17522685210784581738",
   "priceRange": "€€",
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "33"},
   "areaServed": [
@@ -60,7 +64,7 @@
     {"@type": "City", "name": "Frankfurt am Main"},
     {"@type": "City", "name": "Wiesbaden"}
   ],
-  "sameAs": ["https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/"]
+  "sameAs": ["https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/", "https://www.instagram.com/ar.entru_/", "https://maps.google.com/?cid=17522685210784581738"]
 }
 </script>
 <script type="application/ld+json">
@@ -126,10 +130,25 @@
   @keyframes waPulse{to{box-shadow:0 0 0 16px rgba(16,185,129,0)}}
   .wa-pulse{box-shadow:0 0 0 0 rgba(16,185,129,.45);animation:waPulse 2.2s infinite}
   @media (prefers-reduced-motion:reduce){.floaty,.wa-pulse{animation:none}}
+  #progressBar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#2563EB,#1E3A8A);z-index:60;transition:width .1s linear}
+  .lightbox{position:fixed;inset:0;background:rgba(15,23,42,.93);display:none;align-items:center;justify-content:center;z-index:90;padding:20px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:min(92vw,1000px);max-height:78vh;border-radius:12px;box-shadow:0 24px 64px rgba(0,0,0,.5)}
+  .lb-btn{position:absolute;background:rgba(255,255,255,.14);color:#fff;width:44px;height:44px;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-size:17px;transition:background .2s;cursor:pointer;border:0}
+  .lb-btn:hover{background:rgba(255,255,255,.3)}
+  #lbClose{top:18px;right:18px}
+  #lbPrev{left:14px;top:50%;transform:translateY(-50%)}
+  #lbNext{right:14px;top:50%;transform:translateY(-50%)}
+  #lbCap{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#e2e8f0;font-weight:600;text-align:center;max-width:88vw;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+  #toTop{opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+  #toTop.show{opacity:1;pointer-events:auto;transform:none}
+  #referenzen figure{cursor:zoom-in}
+  nav a.nav-active{color:#1D4ED8;font-weight:600}
 </style>
 </head>
 <body class="font-sans text-slate-700 bg-white antialiased">
 <script>document.documentElement.classList.add('js')</script>
+<div id="progressBar" aria-hidden="true"></div>
 <a href="#inhalt" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-brand-700 focus:font-semibold">Zum Inhalt springen</a>
 
 <!-- Topbar -->
@@ -225,6 +244,13 @@
         <li class="flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700"></i> Foto per WhatsApp schicken – schnelle Ersteinschätzung</li>
         <li class="flex items-center gap-2.5"><i aria-hidden="true" class="fa-solid fa-check text-brand-700"></i> Versichertes, zuverlässiges Team</li>
       </ul>
+      <div class="mt-8 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+        <span class="font-medium">Sie finden uns auf:</span>
+        <a href="https://maps.google.com/?cid=17522685210784581738" target="_blank" rel="noopener" aria-label="Google-Profil" class="w-9 h-9 rounded-full bg-white border border-slate-200 hover:border-brand-700 hover:text-brand-700 text-slate-600 flex items-center justify-center transition"><i aria-hidden="true" class="fa-brands fa-google"></i></a>
+        <a href="https://www.facebook.com/p/AR-Entr%C3%BCmpelung-61567249633561/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white border border-slate-200 hover:border-brand-700 hover:text-brand-700 text-slate-600 flex items-center justify-center transition"><i aria-hidden="true" class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ar.entru_/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white border border-slate-200 hover:border-brand-700 hover:text-brand-700 text-slate-600 flex items-center justify-center transition"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/491733926466" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white border border-slate-200 hover:border-emerald-500 hover:text-emerald-600 text-slate-600 flex items-center justify-center transition"><i aria-hidden="true" class="fa-brands fa-whatsapp"></i></a>
+      </div>
     </div>
     <div class="relative">
       <div aria-hidden="true" class="absolute -inset-8 bg-gradient-to-tr from-brand-100 via-transparent to-brand-50 rounded-[2.5rem] blur-2xl opacity-80 pointer-events-none"></div>
@@ -337,7 +363,7 @@
     <div class="max-w-2xl mb-12">
       <span class="text-sm font-semibold uppercase tracking-[0.15em] text-brand-700">Referenzen</span>
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mt-3 mb-4">Einblicke in unsere Arbeit</h2>
-      <p class="text-lg text-slate-600">Vom vollen Keller bis zur besenrein übergebenen Fläche.</p>
+      <p class="text-lg text-slate-600">Vom vollen Keller bis zur besenrein übergebenen Fläche. <span class="text-slate-400 text-base">Fotos zum Vergrößern anklicken.</span></p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <figure class="reveal group relative rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow h-72">
@@ -524,22 +550,22 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="reveal bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
-        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">1</span>
+        <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">1</span>
         <h3 class="font-bold text-slate-900 mb-2">Kontakt aufnehmen</h3>
         <p class="text-slate-600 text-[15px]">Per Anruf, WhatsApp oder über das Kontaktformular – wie es Ihnen am liebsten ist.</p>
       </div>
       <div class="reveal d1 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
-        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">2</span>
+        <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">2</span>
         <h3 class="font-bold text-slate-900 mb-2">Kostenlose Besichtigung</h3>
         <p class="text-slate-600 text-[15px]">Wir schauen uns alles vor Ort an und klären offene Fragen – unverbindlich.</p>
       </div>
       <div class="reveal d2 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
-        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">3</span>
+        <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">3</span>
         <h3 class="font-bold text-slate-900 mb-2">Festpreis-Angebot</h3>
         <p class="text-slate-600 text-[15px]">Sie erhalten ein klares, verbindliches Angebot ohne versteckte Kosten.</p>
       </div>
       <div class="reveal d3 bg-white border border-slate-200 rounded-xl p-7 hover:shadow-md hover:border-brand-100 transition-all">
-        <span class="w-10 h-10 rounded-full bg-brand-700 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50">4</span>
+        <span class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-900 text-white font-bold flex items-center justify-center mb-5 ring-4 ring-brand-50 shadow-md shadow-brand-700/20">4</span>
         <h3 class="font-bold text-slate-900 mb-2">Besenreine Übergabe</h3>
         <p class="text-slate-600 text-[15px]">Wir räumen, entsorgen umweltgerecht und übergeben sauber gefegt.</p>
       </div>
@@ -713,6 +739,27 @@
     </ul>
   </div>
 </section>
+
+<!-- CTA-Band -->
+<section aria-label="Jetzt Kontakt aufnehmen" class="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-800 to-brand-900 text-white">
+  <div aria-hidden="true" class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5 blur-2xl"></div>
+  <div aria-hidden="true" class="absolute -bottom-32 -left-16 w-80 h-80 rounded-full bg-white/5 blur-2xl"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-20 text-center">
+    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-sm font-semibold mb-5">
+      <span class="text-amber-400">★</span> 4,9 von 5 · 33 Google-Rezensionen
+    </span>
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Bereit für freie Flächen?</h2>
+    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-9">Kostenlose Besichtigung, verbindlicher Festpreis, besenreine Übergabe – melden Sie sich jetzt, wir antworten in der Regel innerhalb von 24 Stunden.</p>
+    <div class="flex flex-wrap justify-center gap-3.5">
+      <a href="tel:+491733926466" class="inline-flex items-center gap-2.5 bg-white text-brand-800 hover:bg-blue-50 font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-px">
+        <i aria-hidden="true" class="fa-solid fa-phone"></i> 0173 392 6466
+      </a>
+      <a href="https://wa.me/491733926466?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Entr%C3%BCmpelung%20und%20bitte%20um%20ein%20kostenloses%20Angebot." target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg hover:-translate-y-px">
+        <i aria-hidden="true" class="fa-brands fa-whatsapp text-lg"></i> WhatsApp schreiben
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- Footer -->
@@ -733,6 +780,10 @@
           <a href="https://maps.google.com/?cid=17522685210784581738" target="_blank" rel="noopener"
              class="inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
             <i aria-hidden="true" class="fa-brands fa-google"></i> 4,9 <span class="text-amber-400">★</span> auf Google
+          </a>
+          <a href="https://www.instagram.com/ar.entru_/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/10 rounded-lg px-4 py-2 font-medium text-slate-300 transition text-sm">
+            <i aria-hidden="true" class="fa-brands fa-instagram"></i> Instagram
           </a>
         </div>
       </div>
@@ -784,6 +835,20 @@
 </div>
 <div class="sm:hidden h-[calc(3.5rem+env(safe-area-inset-bottom))]"></div>
 
+<!-- Zurück nach oben -->
+<button id="toTop" aria-label="Zurück nach oben" class="hidden sm:flex fixed bottom-24 right-7 z-40 w-11 h-11 rounded-full bg-slate-900/85 hover:bg-slate-900 text-white items-center justify-center shadow-lg">
+  <i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Lightbox für Referenzfotos -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildergalerie">
+  <img id="lbImg" src="" alt="">
+  <p id="lbCap"></p>
+  <button id="lbClose" class="lb-btn" aria-label="Schließen"><i aria-hidden="true" class="fa-solid fa-xmark"></i></button>
+  <button id="lbPrev" class="lb-btn" aria-label="Vorheriges Bild"><i aria-hidden="true" class="fa-solid fa-chevron-left"></i></button>
+  <button id="lbNext" class="lb-btn" aria-label="Nächstes Bild"><i aria-hidden="true" class="fa-solid fa-chevron-right"></i></button>
+</div>
+
 <!-- Toast -->
 <div class="toast bg-slate-900 text-white font-medium px-6 py-3.5 rounded-lg shadow-xl max-w-[92vw] text-center" id="toast" role="status" aria-live="polite"></div>
 
@@ -821,6 +886,53 @@
 
   // Jahr aktuell halten
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll-Fortschrittsbalken + Zurück-nach-oben
+  const pBar = document.getElementById('progressBar');
+  const toTop = document.getElementById('toTop');
+  addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    pBar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+    toTop.classList.toggle('show', scrollY > 600);
+  }, {passive:true});
+  toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+
+  // Scrollspy: aktiven Abschnitt in der Navigation markieren
+  const navLinks = [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] a')];
+  const spy = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('nav-active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  navLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+
+  // Lightbox für Referenz-Galerie
+  const lbFigs = [...document.querySelectorAll('#referenzen figure')];
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  let lbIdx = 0;
+  const lbShow = i => {
+    lbIdx = (i + lbFigs.length) % lbFigs.length;
+    const img = lbFigs[lbIdx].querySelector('img');
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    lbCap.textContent = lbFigs[lbIdx].querySelector('figcaption').textContent;
+  };
+  const lbOpen = i => { lbShow(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const lbHide = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+  lbFigs.forEach((f, i) => f.addEventListener('click', () => lbOpen(i)));
+  document.getElementById('lbClose').addEventListener('click', lbHide);
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); lbShow(lbIdx - 1); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); lbShow(lbIdx + 1); });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg) lbHide(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbHide();
+    if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  });
 
   // Formular → E-Mail + Hinweis
   document.getElementById('contactForm').addEventListener('submit', ev => {
